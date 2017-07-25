@@ -1,0 +1,30 @@
+<section class="mainbar">
+  <section class="matter">
+    <div class="container">
+      <div class="row">
+        <div class="widget wviolet">
+          <div ht-widget-header title="{{vm.title}}"></div>
+          <div class="seach" placeholder="Search">
+            <input type='text' ng-model='search' />
+          </div>
+          <div class="widget-content">
+            <span ng-click="vm.getElementValue(location)" class="label label-primary" ng-repeat="location in vm.locations">
+              {{location}}
+            </span>
+            <span class="label label-danger" ng-click="vm.clearSelectedLocation()">Clear</span>
+          </div>
+          <div class="widget-content user">
+            <div ng-repeat="user in vm.userList | filter:search | filter:vm.seletedLocation">
+              <h3>{{user.firstName}} {{user.lastName}}</h3>
+              <p>{{user.age}}</p>
+              <p>{{user.location}}</p>
+            </div>
+          </div>
+          <div class="widget-foot">
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
