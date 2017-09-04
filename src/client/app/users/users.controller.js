@@ -16,6 +16,7 @@
     vm.seletedLocation = '';
     vm.getElementValue = getElementValue;
     vm.clearSelectedLocation = clearSelectedLocation;
+    vm.editFirstName = editFirstName;
 
     activate();
 
@@ -59,6 +60,10 @@
         vm.locations = checkForDuplicatesInArray(locations);
         return vm.locations;
       });
+    }
+
+    function editFirstName($index){
+      console.log($index);
     }
 
   }

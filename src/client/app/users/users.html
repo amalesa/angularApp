@@ -13,11 +13,32 @@
             </span>
             <span class="label label-danger" ng-click="vm.clearSelectedLocation()">Clear</span>
           </div>
-          <div class="widget-content user">
-            <div ng-repeat="user in vm.userList | filter:search | filter:vm.seletedLocation">
-              <h3>{{user.firstName}} {{user.lastName}}</h3>
-              <p>{{user.age}}</p>
-              <p>{{user.location}}</p>
+          <div class="widget-content">
+            <div class="user" ng-class="{ 'selected-class-name': $index == selectedIndex }" ng-repeat="user in vm.userList | filter:search | filter:vm.seletedLocation">
+              <div>
+                <span ng-hide="editFirstName">{{user.firstName}}</span>
+                <input ng-show="editFirstName" value="{{user.firstName}}"/> 
+                <button ng-click="editFirstName=true">Edit</button>
+                <button>Save</button>
+              </div>
+              <div>              
+                <span ng-hide="editLastName">{{user.lastName}}</span>
+                <input ng-show="editLastName" value="{{user.lastName}}"/>
+                <button ng-click="editLastName=true">Edit</button>
+                <button>Save</button>
+              </div>    
+              <div>
+                <span ng-hide="editAge">{{user.age}}</span>
+                <input ng-show="editAge" value="{{user.age}}"/>
+                <button ng-click="editAge=true">Edit</button>
+                <button>Save</button>
+              </div>
+              <div>
+                <span ng-hide="editUserLocation">{{user.location}}</span>
+                <input ng-show="editUserLocation" value="{{user.location}}"/>
+                <button ng-click="editUserLocation=true">Edit</button>
+                <button>Save</button>
+              </div>                        
             </div>
           </div>
           <div class="widget-foot">

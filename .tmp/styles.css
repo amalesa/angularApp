@@ -1044,6 +1044,7 @@ form label {
 .user {
   font-size: 12px !important;
   line-height: 20px !important;
+  margin: 20px;
 }
 .user img {
   max-width: 70px;

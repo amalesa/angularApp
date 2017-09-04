@@ -32,9 +32,18 @@ describe('UsersController', function () {
         expect($log.info.logs).to.match(/Activated/);
       });
 
-      it('should have at least 1 person', function () {
+      it('should have at least 1 user', function () {
         expect(controller.userList).to.have.length.above(0);
       });
+
+      it('should have at least 1 location', function () {
+        expect(controller.locations).to.have.length.above(0);
+      });
+
+      it('should have at least 1 location', function () {
+        expect(controller.locations).to.have.length.above(0);
+      });
+
     });
   });
 });
